@@ -1,18 +1,22 @@
 <?php 
 
+namespace App\Controllers\Errors;
+
+use App\Core\Controller;
+
 class HttpErrorController extends Controller {
 
-    public function NotFound() {
+    public function notFound() {
         http_response_code(404);
         $this->view('errors/404');
     }
 
-    public function InternalServerError() {
+    public function internalServerError() {
         http_response_code(500);
         $this->view('erros/500');
     }
 
-    public function Unauthorized() {
+    public function unauthorized() {
         http_response_code(401);
         $this->view('errors/401');
     }
