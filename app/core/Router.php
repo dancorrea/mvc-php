@@ -10,8 +10,8 @@ class Router {
         
         $url = trim($url, '/');
         $parts = $url ? explode('/', $url) : [];
-        $controllerName = 'App\Controllers\\' . ($parts[0] ?? 'Home');
-        $controllerName = ucfirst($controllerName) . 'Controller';
+        $controllerName = $parts[0] ?? 'Home';
+        $controllerName = 'App\Controllers\\' . ucfirst($controllerName) . 'Controller';
         $actionName = $parts[1] ?? 'index';
 
         if (!class_exists($controllerName)) {
